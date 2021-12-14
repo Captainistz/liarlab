@@ -9,7 +9,7 @@
 /* base styles & title */
 body {
   margin: 5% auto 0;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Open Sans', sans-serif !important;
   color: var(--secondary);
   scroll-behavior: smooth;
 }

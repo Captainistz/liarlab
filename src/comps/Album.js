@@ -6,11 +6,11 @@ import { MenuItem, FormControl, Select, InputLabel } from '@material-ui/core'
 const useStyles = makeStyles((theme) => ({
   formControl: {
     margin: theme.spacing(1),
-    minWidth: 200,
+    minWidth: 220,
   },
   menuPaper: {
     maxHeight: '35ch',
-    maxWidth: '200px',
+    maxWidth: '220px',
   },
 }))
 
@@ -22,6 +22,9 @@ const Album = ({ setAlbum, album, names }) => {
   }
 
   const theme = createMuiTheme({
+    typography: {
+      fontFamily: `"Open Sans",sans-serif;`
+    },
     palette: {
       primary: {
         main: '#6ecce6',
