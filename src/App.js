@@ -66,14 +66,29 @@ function App() {
             <Title />
             <SwitchMode mode={mode} setMode={setMode} setAlbum={setAlbum} />
           </Suspense>
-          {session.isLoggedIn && session.currentUser.uid === process.env.REACT_APP_FIREBASE_ADMIN_UID && (
-            <Suspense fallback={<p>1</p>}>
-              <AdminPanel setAlbum={setAlbum} album={album} names={names} session={session} mode={mode} />
-            </Suspense>
-          )}
+          {session.isLoggedIn &&
+            session.currentUser.uid === process.env.REACT_APP_FIREBASE_ADMIN_UID && (
+              <Suspense fallback={<p>1</p>}>
+                <AdminPanel
+                  setAlbum={setAlbum}
+                  album={album}
+                  names={names}
+                  session={session}
+                  mode={mode}
+                />
+              </Suspense>
+            )}
           <Suspense fallback={<Waiter />}>
             {names.length !== 0 && <Album setAlbum={setAlbum} album={album} names={names} />}
-            {names.length !== 0 && <ImageGrid setSelectedImg={setSelectedImg} album={album} names={names} mode={mode} session={session} />}
+            {names.length !== 0 && (
+              <ImageGrid
+                setSelectedImg={setSelectedImg}
+                album={album}
+                names={names}
+                mode={mode}
+                session={session}
+              />
+            )}
           </Suspense>
           {names && <Pagecontrol album={album} setAlbum={setAlbum} names={names} />}
           {selectedImg && <Modal selectedImg={selectedImg} setSelectedImg={setSelectedImg} />}
