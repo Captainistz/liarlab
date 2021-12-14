@@ -108,7 +108,6 @@ const CreateAlbum = ({ names, setAlbum, mode }) => {
       name: '',
       film: '',
     })
-    alert(error)
   }
 
   return (
